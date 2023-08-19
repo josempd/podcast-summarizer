@@ -88,10 +88,6 @@ def main():
             st.subheader("Podcast Guest")
             st.write(podcast_info['podcast_guest'])
 
-        with col4:
-            st.subheader("Podcast Guest Details")
-            st.write(podcast_info["podcast_guest"]['summary'])
-
         # Display the five key moments
         st.subheader("Key Moments")
         key_moments = podcast_info['podcast_highlights']
@@ -115,7 +111,12 @@ def create_dict_from_json_files(folder_path):
 
 def process_podcast_info(url):
     f = modal.Function.lookup("corise-podcast-project", "process_podcast")
-    output = f.call(url, '/content/podcast/')
+    output = f.call(url, '/')
+    filename = os.path(url.split('/')[-1] + ".json")
+
+    # 3. Save the output to the JSON file
+    with open(filename, "w") as outfile:
+        json.dump(output, outfile)
     return output
 
 if __name__ == '__main__':
