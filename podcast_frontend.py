@@ -71,7 +71,7 @@ def main():
     url = st.sidebar.text_input("Link to RSS Feed")
 
     process_button = st.sidebar.button("Process Podcast Feed")
-    st.sidebar.markdown("**Note**: Podcast processing can take upto 5 mins, please be patient.")
+    st.sidebar.markdown("**Note**: Podcast processing can take upto 5 mins, please be patient. (You may choose your transcripted podcast from the list, as they're saved in a csv file to keep them loaded :D)")
 
     if process_button:
 
