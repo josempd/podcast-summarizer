@@ -67,11 +67,12 @@ def main():
                 f"<p style='margin-bottom: 5px;'>{moment}</p>", unsafe_allow_html=True)
 
     # User Input box
+    st.sidebar.markdown(":red[**👆👆👆Choose your new podcast from the list!**] ")
     st.sidebar.subheader("Add and Process New Podcast Feed (Max 30 min episodes)")
     url = st.sidebar.text_input("Link to RSS Feed")
 
     process_button = st.sidebar.button("Process Podcast Feed")
-    st.sidebar.markdown("**Note**: Podcast processing can take upto 5 mins, please be patient. (You may choose your transcripted podcast from the list, as they're saved in a csv file to keep them loaded :D)")
+    st.sidebar.markdown("**Note**: Podcast processing can take upto 5 mins, please be patient.")
 
     if process_button:
 
