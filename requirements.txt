@@ -1,2 +1,6 @@
 streamlit
 modal
+pandas
+google-auth-oauthlib==1.0.0
+gspread==5.10.0
+PyDrive==1.3.1
